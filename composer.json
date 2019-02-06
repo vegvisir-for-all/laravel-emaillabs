@@ -1,0 +1,37 @@
+{
+    "name": "vegvisir/laravel-emaillabs",
+    "description": "EmailLabs Library wrapper for Laravel",
+    "autoload": {
+        "psr-4": {
+            "Vegvisir\\EmailLabs\\": "src/"
+        }
+    },
+    "type": "library",
+    "keywords": [
+        "mail", "laravel", "emaillabs"
+    ],
+    "require": {
+        "emaillabs/emaillabs-php-api": "dev-master",
+        "laravel/framework": "^5.4",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marek Kapusta-Ognicki",
+            "email": "marek@vegvisir.online"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vegvisir\\EmailLabs\\EmailLabsServiceProvider"
+            ],
+            "aliases": {
+                "EmailLabs": "Vegvisir\\EmailLabs\\EmailLabsFacade"
+            }
+        }
+    }
+}
