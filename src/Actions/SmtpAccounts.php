@@ -12,7 +12,7 @@ namespace Vegvisir\EmailLabs\Actions;
 
 use Vegvisir\EmailLabs\Actions\Action as BaseAction;
 
-class Emails extends BaseAction
+class SmtpAccounts extends BaseAction
 {
     /**
      * Request method.
@@ -27,5 +27,4 @@ class Emails extends BaseAction
      * @var string
      */
     protected $action = 'smtp';
-
 }
