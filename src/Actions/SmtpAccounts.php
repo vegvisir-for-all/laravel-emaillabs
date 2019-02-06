@@ -7,3 +7,25 @@
  * @copyright 2019 Vegvisir Sp. z o.o. <vegvisir.for.all@gmail.com>
  * @license MIT
  */
+
+namespace Vegvisir\EmailLabs\Actions;
+
+use Vegvisir\EmailLabs\Actions\Action as BaseAction;
+
+class Emails extends BaseAction
+{
+    /**
+     * Request method.
+     *
+     * @var string
+     */
+    protected $method = 'GET';
+
+    /**
+     * API endpoint.
+     *
+     * @var string
+     */
+    protected $action = 'smtp';
+
+}
