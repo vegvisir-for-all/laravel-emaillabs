@@ -57,7 +57,7 @@ class Emails extends BaseAction
         'created_at.from',
         'created_at.to',
         'injected_time.from',
-        'injected_time.to'
+        'injected_time.to',
     ];
 
     /**
