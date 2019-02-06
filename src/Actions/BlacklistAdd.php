@@ -12,26 +12,35 @@ namespace Vegvisir\EmailLabs\Actions;
 
 use Vegvisir\EmailLabs\Actions\Action as BaseAction;
 
-class AddTemplate extends BaseAction
+class BlacklistAdd extends BaseAction
 {
     /**
      * Array with required items.
      *
      * @var array
      */
-    protected $requireData = ['html'];
+    protected $requireData = [
+        'account',
+        'email',
+        'reason',
+        'comment',
+    ];
 
     /**
-     * Array with allowed items.
+     * Data array.
      *
      * @var array
      */
-    protected $allowedData = ['html', 'txt'];
+    protected $data = [
+        'reason' => 'spam_complaint',
+        'comment' => 'Added by library to support web-service',
+        'source' => 'api-client',
+    ];
 
     /**
      * API endpoint.
      *
      * @var string
      */
-    protected $action = 'add_template';
+    protected $action = 'blacklists';
 }

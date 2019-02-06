@@ -15,14 +15,14 @@ use Vegvisir\EmailLabs\Actions\Action as BaseAction;
 class Blacklist extends BaseAction
 {
     /**
-     * Request method
+     * Request method.
      *
      * @var string
      */
     protected $method = 'GET';
 
     /**
-     * API endpoint
+     * API endpoint.
      *
      * @var string
      */
@@ -43,7 +43,7 @@ class Blacklist extends BaseAction
     protected $params = [
         'offset' => 0,
         'limit' => 100,
-        'sort' => '-created_at'
+        'sort' => '-created_at',
     ];
 
     /**
@@ -57,7 +57,7 @@ class Blacklist extends BaseAction
         'created_at.from',
         'created_at.to',
         'reason',
-        'source'
+        'source',
     ];
 
     /**
@@ -68,6 +68,6 @@ class Blacklist extends BaseAction
     protected $allowParams = [
         'sort',
         'limit',
-        'offset'
+        'offset',
     ];
 }

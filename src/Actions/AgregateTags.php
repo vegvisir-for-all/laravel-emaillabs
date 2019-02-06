@@ -15,14 +15,14 @@ use Vegvisir\EmailLabs\Actions\Action as BaseAction;
 class AgregateTags extends BaseAction
 {
     /**
-     * Request method
+     * Request method.
      *
      * @var string
      */
     protected $method = 'GET';
 
     /**
-     * API endpoint
+     * API endpoint.
      *
      * @var string
      */
@@ -43,7 +43,7 @@ class AgregateTags extends BaseAction
     protected $params = [
         'offset' => 0,
         'limit' => 100,
-        'sort' => '-created_at'
+        'sort' => '-created_at',
     ];
 
     /**
@@ -61,6 +61,6 @@ class AgregateTags extends BaseAction
     protected $allowParams = [
         'smtp_account',
         'date_from',
-        'date_to'
+        'date_to',
     ];
 }

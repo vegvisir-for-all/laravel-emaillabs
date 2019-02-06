@@ -77,6 +77,10 @@ class EmailLabsClient
             $url .= (new EmailLabsFilter())->setFilter($filters);
         }
 
+        if (isset($this->data)) {
+            $data = array_merge($this->data, $data);
+        }
+
         try {
             $request = $this->client->{$method}($url, [
                 'form_params' => $data,
