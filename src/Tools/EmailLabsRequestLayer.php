@@ -20,14 +20,21 @@ class EmailLabsRequestLayer extends BaseEmailLabsRequestLayer implements EmailLa
      * Class constructor.
      *
      * @param array $config config array
+     *
+     * @throws \Exception
      */
     public function __construct($config = [])
     {
+        if (!$this->validateData()) {
+            throw new \Exception($this->validateErrorMsg, 500);
+        }
         $this->curl = new EmailLabsCurl($config);
     }
 
     /**
      * Override parent's method.
+     *
+     * @return object|string
      */
     public function getResult()
     {
@@ -38,5 +45,31 @@ class EmailLabsRequestLayer extends BaseEmailLabsRequestLayer implements EmailLa
             $this->getParams(),
             $this->getFilters()
         );
+    }
+
+    /**
+     * Validate given data using $requireData.
+     *
+     * return bool
+     */
+    protected function validateData()
+    {
+        $errors = 0;
+        $errorFields = [];
+
+        foreach ($this->requireData as $key) {
+            if (!isset($this->data[$key])) {
+                ++$errors;
+                $errorFields[] = $key;
+            }
+        }
+
+        if (0 === $errors) {
+            return true;
+        }
+
+        $this->validateErrorMsg = 'Fields '.trim(implode(', ', $errorFields)).' are required';
+
+        return false;
     }
 }
